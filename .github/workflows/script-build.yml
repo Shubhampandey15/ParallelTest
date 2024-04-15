@@ -12,3 +12,5 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
         command:npm run test
+      env:
+         CYPRESS_RECORD_KEY :${{ secrets. CYPRESS_RECORD_KEY}}
