@@ -1,0 +1,10 @@
+{
+  "suites": 2,
+  "tests": 8,
+  "passes": 8,
+  "pending": 0,
+  "failures": 0,
+  "start": "2024-04-23T07:33:46.426Z",
+  "duration": 3304,
+  "file": "cypress\\e2e\\parallel\\connectors.cy.js"
+}

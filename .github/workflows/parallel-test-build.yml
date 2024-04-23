@@ -9,9 +9,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-        command:npm run test
+          command: npm run test
 
-    test1-run:
+  test1-run:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -19,9 +19,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-        command:npm run test1
+          command: npm run test1
 
-    test2-run:
+  test2-run:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -29,9 +29,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-        command:npm run test2
+          command: npm run test2
 
-    test3-run:
+  test3-run:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -39,4 +39,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-        command:npm run test3
+          command: npm run test3

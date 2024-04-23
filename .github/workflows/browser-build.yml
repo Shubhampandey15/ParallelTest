@@ -1,4 +1,4 @@
-name: browser run End-to-end tests
+name: Regression End-to-end tests
 on: push
 jobs:
   cypress-run:
@@ -11,4 +11,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-        browser:chrome
+          browser: chrome

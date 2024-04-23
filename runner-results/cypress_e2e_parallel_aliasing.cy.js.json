@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 2,
+  "passes": 2,
+  "pending": 0,
+  "failures": 0,
+  "start": "2024-04-23T07:33:40.740Z",
+  "duration": 3585,
+  "file": "cypress\\e2e\\parallel\\aliasing.cy.js"
+}

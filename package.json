@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "cy:run": "cypress run",
-    "test":"node cypress/scripts/cypress-run.js ",
-    "test1":"npx cypress run --spec cypress/e2e/parallelTest/aliasing.cy.js ",
-    "test2":"npx cypress run --spec cypress/e2e/parallelTest/assertion.cy.js ",
-    "test3":"npx cypress run --spec cypress/e2e/parallelTest/connectors.cy.js ",
-   "cy:parallel": "cypress-parallel -d  cypress/e2e/parallelTest/ -t 2 -s test "
+    "test": "node cypress/scripts/cypress-run.js ",
+    "test1": "npx cypress run --spec cypress/e2e/parallel/actions.cy.js",
+    "test2": "npx cypress run --spec cypress/e2e/parallel/assertion.cy.js",
+    "test3": "npx cypress run --spec cypress/e2e/parallel/connectors.cy.js",
+    "runall": "node_modules\\.bin\\cypress run",
+    "tests": "npx cypress run --headed",
+    "cy:parallel": "cypress-parallel -d cypress/e2e/parallel -t 2 -s tests"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.7.2"
+    "cypress": "^13.8.0"
   },
   "dependencies": {
     "cypress-parallel": "^0.14.0"
