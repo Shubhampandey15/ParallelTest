@@ -1,24 +1,72 @@
 {
-  "name": "new-folder",
+  "name": "cypress-reveleer-cucumber",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reveleer cypress cucumber framework",
   "main": "index.js",
   "scripts": {
+    "cy:open": "cypress open",
+    "clean:reports": "if exist cypress\\reports rmdir /S/Q cypress\\reports",
+    "pretest": "npm run clean:reports",
+    "scripts": "npx cypress run --browser chrome --headed",
+    "posttest": "node cucumber-html-report.js",
+    "cy:testmo": "testmo automation:run:submit --instance https://reveleer.testmo.net --project-id 1 --name 'Regression11162023 --source 'OverreadModule' --results results/*.xml",
+    "test": "npm run scripts || npm run posttest",
+    "cy:onlyme": "cypress run  --spec cypress/e2e/Overread.feature  --browser chrome  --headed --env TAGS=@smoke",
+    "cy:mytest": "npm run pretest && npm run cy:onlyme || npm run posttest",
+    "cypress:smoketag": "cypress run  --browser chrome --headed --env TAGS=@smoke",
+    "cy:smoke": "npm run pretest && npm run cypress:smoketag || npm run posttest",
+    "cypress:regressiontag": "cypress run  --browser chrome --headed --env TAGS=@regression",
+    "cy:regression": "npm run pretest && npm run cypress:regressiontag || npm run posttest",
+    "cypress:sanitytag": "cypress run  --browser chrome --headed --env TAGS=@sanity",
+    "cy:sanity": "npm run pretest && npm run cypress:sanitytag || npm run posttest",
     "cy:run": "cypress run",
-    "test": "node cypress/scripts/cypress-run.js ",
-    "test1": "npx cypress run --spec cypress/e2e/parallel/actions.cy.js",
-    "test2": "npx cypress run --spec cypress/e2e/parallel/assertion.cy.js",
-    "test3": "npx cypress run --spec cypress/e2e/parallel/connectors.cy.js",
     "runall": "node_modules\\.bin\\cypress run",
     "tests": "npx cypress run --headed",
-    "cy:parallel": "cypress-parallel -d cypress/e2e/parallel -t 2 -s tests"
+    "cy:parallel": "cypress-parallel -d cypress/e2e/*W15Measure.feature -t 2 -s tests"
   },
-  "author": "",
+  "keywords": [
+    "Cypress",
+    "BDD",
+    "Cucumber"
+  ],
+  "author": "Reveleer",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^13.13.0"
-  },
   "dependencies": {
-    "cypress-parallel": "^0.14.0"
+    "cypress-wait-until": "^2.0.1",
+    "prettier": "^2.8.4"
+  },
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "cucumber-junit": "^1.7.1",
+    "cy-verify-downloads": "^0.1.17",
+    "cypress": "^12.17.4",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-cucumber-tagging": "^1.0.3",
+    "cypress-downloadfile": "^1.2.3",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-junit-reporter": "^1.3.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-parallel": "^0.14.0",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-real-events": "^1.12.0",
+    "cypress-xpath": "^2.0.1",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "multiple-cucumber-html-reporter": "^3.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/e2e",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "./reports/cucumber-json/",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    },
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "tags": "@smoke"
   }
 }

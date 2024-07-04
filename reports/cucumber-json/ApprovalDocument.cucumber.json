@@ -1,0 +1,72 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Approval Document",
+    "line": 1,
+    "id": "approval-document",
+    "tags": [],
+    "uri": "ApprovalDocument.feature",
+    "elements": [
+      {
+        "id": "approval-document;verify-rotate-options",
+        "keyword": "Scenario",
+        "line": 93,
+        "name": "Verify Rotate options",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 94,
+            "name": "user will go to approval",
+            "result": {
+              "status": "passed",
+              "duration": 9200000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 95,
+            "name": "user will go to document",
+            "result": {
+              "status": "passed",
+              "duration": 215000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 96,
+            "name": "user will click on three dot",
+            "result": {
+              "status": "passed",
+              "duration": 2807000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 97,
+            "name": "user will click on view document and will verify document is visible",
+            "result": {
+              "status": "passed",
+              "duration": 196000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 98,
+            "name": "user will verify rotation",
+            "result": {
+              "status": "passed",
+              "duration": 10053000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
